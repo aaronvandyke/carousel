@@ -1,0 +1,141 @@
+#carousel-overlay {
+  align-content: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: none;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
+}
+
+.carousel {
+  align-items: center;
+  display: flex;
+  justify-items: end;
+  position: relative;
+  z-index: 7;
+}
+
+.carousel-fig-prev,
+.carousel-fig-next {
+  display: none;
+}
+
+.carousel-fig-current {
+  display: grid;
+  transform: translateX(0);
+  max-width: 100%;
+}
+
+.carousel-fig-prev,
+.carousel-fig-current,
+.carousel-fig-next {
+  cursor: auto;
+}
+.carousel-fig-prev img,
+.carousel-fig-current img,
+.carousel-fig-next img {
+  max-height: 100vh;
+  max-width: 100%;
+  min-height: 18em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 8;
+}
+
+.carousel .carousel-actions {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  display: flex;
+  height: 30vh;
+  max-height: 12em;
+  min-height: 5em;
+}
+
+.prev-area {
+  border-radius: 1em 0 0 1em;
+  justify-items: end;
+  position: relative;
+  z-index: 6;
+}
+
+.next-area {
+  border-radius: 0 1em 1em 0;
+  justify-items: start;
+  position: relative;
+  z-index: 6;
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: #222;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 1.5em;
+  outline: none;
+  width: 1.5em;
+  z-index: 9;
+}
+
+.carousel figure {
+  cursor: pointer;
+  margin: 0;
+}
+
+.carousel-fig-current figcaption {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 0 0 0.375em 0.375em;
+  color: #eee;
+  line-height: 1.5;
+  margin: 0;
+  padding: 1em 0.5em 0.5em;
+  position: relative;
+  top: 0;
+}
+
+.carousel-fig-current figcaption:hover {
+  cursor: zoom-in;
+  transform: scale(1.5);
+  transform-origin: top left;
+  transition-duration: 0.25s;
+  z-index: 101;
+}
+
+.close {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  margin-left: 0.125em;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (min-width: 800px) {
+  .carousel-fig-current {
+    align-items: start;
+    grid-template: "caption image .";
+    grid-template-columns: 12em 1fr 0;
+  }
+
+  .carousel-fig-current figcaption {
+    grid-area: caption;
+  }
+
+  .carousel-fig-current img {
+    grid-area: image;
+  }
+
+  #carousel-button-prev {
+    left: 12em;
+    position: relative;
+  }
+}
+
+/*# sourceMappingURL=carousel.css.map */
